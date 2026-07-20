@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campañas de Radio Digital</title>
+<style>
+body{font-family:'Segoe UI',sans-serif;margin:0;background:#fff0f6;color:#333;}
+header{background:linear-gradient(135deg,#d63384,#ff8fab);color:white;text-align:center;padding:40px;}
+header h1{font-size:35px;}
+.container{width:90%;max-width:1000px;margin:auto;}
+.card{background:white;margin:25px 0;padding:25px;border-radius:20px;box-shadow:0 5px 15px rgba(214,51,132,.20);border-left:6px solid #ff8fab;}
+h2{color:#d63384;}
+.item{background:#ffe5ef;padding:15px;border-radius:12px;margin:10px 0;}
+button{background:#d63384;color:white;border:none;padding:15px 25px;border-radius:20px;cursor:pointer;font-size:16px;}
+button:hover{background:#b0256b;}
+.question{margin:20px 0;background:#fff5fa;padding:15px;border-radius:12px;}
+input[type="radio"]{accent-color:#d63384;}
+.resultado{font-size:22px;font-weight:bold;color:#d63384;}
+footer{text-align:center;background:#8f174d;color:white;padding:20px;}
+</style></head><body><header><h1>🎧 Campañas de Radio Digital</h1><p>Aplicación interactiva de aprendizaje</p></header><div class="container"><div class="card"><h2>🌸 ¿Qué son las campañas de radio digital?</h2><p>Son estrategias de marketing que utilizan plataformas digitales de audio para comunicar mensajes a una audiencia específica mediante streaming, podcasts y contenido bajo demanda.</p></div><div class="card"><h2>🎙️ Características principales</h2><div class="item">🎧 Uso de plataformas digitales de audio.</div><div class="item">🎯 Segmentación de públicos.</div><div class="item">💬 Interacción con la audiencia.</div><div class="item">📊 Medición de resultados.</div><div class="item">🚀 Contenido personalizado.</div></div><div class="card"><h2>📢 Tipos de campañas</h2><ul><li>Reconocimiento de marca.</li><li>Promocionales.</li><li>Lanzamiento de productos.</li><li>Educativas.</li><li>Fidelización de clientes.</li></ul></div><div class="card"><h2>✨ Estrategias de contenido</h2><div class="item">🎤 Spots publicitarios.</div><div class="item">🎙️ Entrevistas patrocinadas.</div><div class="item">📖 Storytelling.</div><div class="item">🎧 Podcast de marca.</div></div><div class="card"><h2>📈 Métricas de evaluación</h2><ul><li>Reproducciones.</li><li>Alcance.</li><li>Tiempo de escucha.</li><li>Interacciones.</li><li>Conversiones.</li><li>ROI.</li></ul></div><div class="card"><h2>💗 Quiz interactivo</h2><div id="quiz"></div><button onclick="calificar()">Calificar quiz</button><p id="resultado" class="resultado"></p></div></div><footer>Campañas de Radio Digital | Proyecto interactivo</footer><script>
+const preguntas=[["¿Qué es una campaña de radio digital?",["Una estrategia de comunicación mediante audio digital","Un anuncio impreso","Una revista"],0],["¿Cuál es un formato de radio digital?",["Podcast","Cartel","Periódico"],0],["¿Qué permite la radio digital?",["Segmentar audiencias","Eliminar usuarios","Evitar análisis"],0],["¿Qué se define antes de una campaña?",["Objetivos","Colores","Decoración"],0],["¿Qué significa ROI?",["Retorno de inversión","Radio online internacional","Registro interno"],0],["¿Qué estrategia utiliza historias?",["Storytelling","Impresión","Publicidad exterior"],0],["¿Qué contenido puede crear una marca?",["Podcast","Factura","Contrato"],0],["¿Qué ayuda a conocer consumidores?",["Segmentación","Ignorar datos","Eliminar clientes"],0],["¿Qué mide una reproducción?",["Audiencia","Precio","Diseño"],0],["¿Qué es audio branding?",["Identidad sonora de una marca","Diseño gráfico","Publicidad física"],0],["¿Cuál es una ventaja de la radio digital?",["Medición en tiempo real","Sin tecnología","Sin usuarios"],0],["¿Qué herramienta analiza campañas?",["Analítica digital","Impresora","Cámara"],0],["¿Qué busca una campaña promocional?",["Impulsar productos","Eliminar ventas","Cerrar plataformas"],0],["¿Cuál es un reto digital?",["Mantener atención del usuario","No crear contenido","No usar internet"],0],["¿Por qué conocer la audiencia?",["Crear mensajes personalizados","Eliminar comunicación","Reducir calidad"],0]];
+let quiz=document.getElementById("quiz");
+preguntas.forEach((p,i)=>{quiz.innerHTML+=`<div class="question"><b>${i+1}. ${p[0]}</b><br><br>${p[1].map((op,j)=>`<label><input type="radio" name="p${i}" value="${j}">${op}</label><br>`).join("")}</div>`;});
+function calificar(){let puntos=0;preguntas.forEach((p,i)=>{let r=document.querySelector(`input[name="p${i}"]:checked`);if(r&&Number(r.value)==p[2])puntos++;});document.getElementById("resultado").innerHTML=`🎀 Resultado: ${puntos} de 15 respuestas correctas`;}
+</script></body></html>
